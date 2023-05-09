@@ -1,4 +1,3 @@
-import wandb
 import music21
 import time
 from music21 import *
@@ -13,7 +12,7 @@ from Sliding_Window import sliding_window
 from Tokenising_Data import tokenising_data
 import logging
 from simpletransformers.seq2seq import Seq2SeqModel, Seq2SeqArgs
-wandb.login()
+
 
 def train(reprocess_input_data,overwrite_output_dir,max_seq_length,train_batch_size,num_train_epochs,save_model_every_epoch,evaluate_generated_text,evaluate_during_training_verbose,use_multiprocessing,manual_seed, encoder_type1):
     
@@ -42,7 +41,6 @@ def train(reprocess_input_data,overwrite_output_dir,max_seq_length,train_batch_s
     args=model_args,
     use_cuda=True)
     
-    run = wandb.init(project="Bumblebee-Transformer", entity="Kamani1317")
     training_notes,training_duration = preprocessing()
     train,label = sliding_window(training_notes,training_duration)
     training,validation = tokenising_data(train,label)
