@@ -9,7 +9,7 @@ import string
 import logging
 
 def preprocessing():
-    string = input('Enter the location of the midi folder: ')
+    string = user_defined_dataset
     files = glob.glob(string)
 
     training_notes = []
