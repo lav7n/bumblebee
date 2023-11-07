@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split as tts
-#from Sliding_Window import train,label
+from slidingWindow import train,label
 
 def tokenising_data(train,label):
     train_df = pd.DataFrame({'input_text':[x for x in train],'target_text':[x for x in label]})
@@ -12,7 +12,7 @@ def tokenising_data(train,label):
         map_dict[value] = chr(index + 65)
         print(index)
 
-    #map_dict = {y:string.ascii_uppercase[x] for x,y in enumerate(sorted(train_df['input_text'].explode().unique()))}
+    # map_dict = {y:String.ascii_uppercase[x] for x,y in enumerate(sorted(train_df['input_text'].explode().unique()))}
 
     train_df = train_df.applymap(lambda x: ' '.join([map_dict[y] for y in x]))
 

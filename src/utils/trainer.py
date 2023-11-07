@@ -7,9 +7,9 @@ import logging
 import glob
 import string
 import logging
-from Preprocessing import preprocessing
-from Sliding_Window import sliding_window
-from Tokenising_Data import tokenising_data
+from utils.Preprocessing import preprocessing
+from utils.slidingWindow import sliding_window
+from utils.tokeniser import tokenising_data
 import logging
 from simpletransformers.seq2seq import Seq2SeqModel, Seq2SeqArgs
 import wandb
